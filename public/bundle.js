@@ -1,50 +1,33 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-/******/
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
+(function(modules) { // webpackBootstrap
+
+var installedModules = {};
+
+function __webpack_require__(moduleId) {
+
+// Check if module is in cache
+if(installedModules[moduleId])
+	return installedModules[moduleId].exports;
+
+var module = installedModules[moduleId] = {
+		exports: {},
+		id: moduleId,
+		loaded: false
+};
+
+// Execute the module function
+modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+	module.loaded = true;
+	return module.exports;
+}
+
+	__webpack_require__.m = modules;
+	__webpack_require__.c = installedModules;
+	__webpack_require__.p = "";
+	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
-/*!*********************!*\
-  !*** ./app/app.jsx ***!
-  \*********************/
+
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -66,23 +49,15 @@
 	ReactDOM.render(React.createElement(Main, null), document.getElementById("app"));
 
 /***/ },
-/* 1 */
-/*!**************************!*\
-  !*** ./~/react/react.js ***!
-  \**************************/
-/***/ function(module, exports, __webpack_require__) {
+function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = __webpack_require__(/*! ./lib/React */ 2);
 
 
-/***/ },
-/* 2 */
-/*!******************************!*\
-  !*** ./~/react/lib/React.js ***!
-  \******************************/
-/***/ function(module, exports, __webpack_require__) {
+},
+function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-present, Facebook, Inc.
@@ -176,19 +151,10 @@
 
 /***/ },
 /* 3 */
-/*!******************************!*\
-  !*** ./~/process/browser.js ***!
-  \******************************/
 /***/ function(module, exports) {
 
 	// shim for using process in browser
 	var process = module.exports = {};
-	
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-	
 	var cachedSetTimeout;
 	var cachedClearTimeout;
 	
@@ -24092,15 +24058,9 @@
 
 
 /***/ },
-/* 207 */
-/*!*******************************************!*\
-  !*** ./app/components/children/Saved.jsx ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
+ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	
-	// Displays the Saved Articles that were searched and stored in the database
 	
 	
 	// Include React
@@ -24139,12 +24099,8 @@
 	    });
 	  },
 	
-	  // Here we render the Search Results Panel
 	  render: function render() {
-	
-	    // http://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
-	    // another way could be using the bind() function. but why not try it this way too.
-	    var that = this;
+	  var that = this;
 	
 	    return React.createElement(
 	      "div",
@@ -24217,9 +24173,8 @@
 	  }
 	});
 	
-	// Export the component back for use in Main file
+
 	module.exports = Saved;
 
-/***/ }
-/******/ ]);
-//# sourceMappingURL=bundle.js.map
+	}
+]);
